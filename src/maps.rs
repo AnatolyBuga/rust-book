@@ -19,7 +19,7 @@ pub fn maps(){
     map.get("a");
     sc.get(&String::from("A"));
     //insert C if it doesn't exist, returns a pointer to the place in the map
-    sc.entry(String::from("C")).or_insert(17);
+    let x = sc.entry(String::from("C")).or_insert(17);
     for (k, v) in &sc {
         println!("{}: {}", k, v);
     }

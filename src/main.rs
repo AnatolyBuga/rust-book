@@ -12,6 +12,8 @@ mod traits2;
 mod lifetimes;
 mod lifetimes_generics_traitbounds;
 mod variables;
+mod closures1;
+mod iterators;
 
 //main that ran succesfully returns 0, else some integer
 //can also return Result
@@ -25,7 +27,7 @@ fn main() {
     //vectors::vectors();
     //strings::strings();
     //maps::maps();
-    variables::variables();
+    //variables::variables();
 
     //Errors
     //errors::read_username_from_file_short();
@@ -38,4 +40,10 @@ fn main() {
 
     //Lifetimes
     //lifetimes::lifetimes()
+
+    //Closures
+    //closures1::closures()
+
+    //Iterators
+    iterators::iterators();
 }
