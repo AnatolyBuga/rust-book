@@ -1,0 +1,53 @@
+git add filename
+git add -p filename #Add part of file
+git status #to see what's been staged for commit
+git commit -m "Message"
+OR git commit -a -m "Message"
+git commit -ammend #to change message
+alias graph ="git log --all --decorate --oneline --graph"
+
+#Push to a non existent remote branch
+git push origin <localBranchName>
+git push -u origin BranchName
+git push --set-upstream origin BranchName
+
+#Create new branch of Head
+git branch <BranchName>
+git branch <BranchName> <commit/reflog hash> #branch off hash
+#Show all branches
+git branch
+#merged branches
+git branch --merged
+#create and checkout
+git checkout -b <branchName>
+
+#checkout
+git checkout BranchName
+
+#from master
+git merge BranchName
+git merge --abort
+
+#update the status of the remote
+git fetch origin
+
+git diff master..BranchName
+
+#REBASE
+git rebase branch # makes history look like a straight line
+git rebase -i HEAD~1 #change commit history of commits HEAD-1 (creates new commit)
+git cherry-pick <commit hash> #when commit needs to be moved from one branch to another
+git reset --hard HEAD~1 #move head back by 1 (and remove commits)
+
+#REFLOG - if you lost valuable commits or branch
+git reflog
+
+#SUBMODULES
+git submodule add <https://github.com/djyde/ToProgress> # files are not part of our git project, but are here in the folder
+
+#Search find filter commit history
+git log --before="2021-1-1" / --after
+--grep
+--author
+--<filename>
+git log branchA..main # all commits in main but not in branchA

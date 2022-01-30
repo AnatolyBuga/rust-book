@@ -1,0 +1,74 @@
+cargo new
+cargo new --lib
+
+cargo run { i)creates exec in target/debug ii)executes }
+cargo build - builds ( produces exec ) dev profile
+cargo build --release #release profile
+cargo check - builds without producing exec (fast)
+cargo build --release {produces exe in target/release }
+cargo run > output.txt
+
+Default Profile setting applied when no [profile.*] in Cargo.toml file. eg:
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
+
+opt-level - number of optimizations, from 0 to 3
+
+cargo doc # puts generated HTML doc into target/doc
+cargo doc --open #builds and opens
+///Put above fn
+///# Examples
+///# Panics 
+///# Safety
+///placed right above fn/struct
+fn blablabla() {}
+
+//! Crate level comment - add to the beginning of lib.rs - documents the item
+//! that contains that comment, not item that follows that comment(like above)
+//! Not place above fn
+
+
+Tests:
+cargo test -- --test-threads=1
+cargo test -- --show-output ; to show println!'s of passing tests
+cargo test explore ; to run specific tests, in that case explore only, another eg
+cargo test c ; in this case runs two tests which have a c in the name
+cargo test -- --ignored ; to run ignored tests
+Doc tests catches examples in doc strings
+
+cargo publish
+must add license under [package] in cargo.toml
+to update, chnage version in toml, and then cargo publish
+
+cannot remove from crates.io, but can prevent future projects from depending on it. Eg:
+cargo yank --vers 1.0.1
+cargo yank --vers 1.0.1 --undo
+
+Workspaces:
+create dir
+create Cargo.toml in the dir with [workspace] members =['name1',]
+cargo new name1 #this creates binary
+notice: workspace shares one target dir
+Next, add to [workspace] members =['name1','add_one',]
+cargo new add-one --lib
+name1 depends on add_one so name1/Cargo.toml [dependecies] add_one = {path = "../add_one"}
+Specify which package to run:
+cargo run -p name1
+cargo test -p add_one 
+if add_one/Cargo.toml [dependecies] rand = "0.8.3" top level Cargo lock will also depend on rand
+However, can't be used in name1
+To pablish, cd into crate, and from there cargo publish
+
+cargo install #to install packages that have binary targets
+a binary target is a runnable program, as opposed to a library target.
+Library target isn't runnable on its own, but can be included/used.
+cargo install installs to $HOME/.cargo/bin, add this dir to path eg:
+cargo install ripgrep # see name of file rg.exe
+rg livelong poem.txt
+if a binary is named cargo-something, it can be ran with
+cargo something
+
+cargo --list #list commands
