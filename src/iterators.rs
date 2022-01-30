@@ -45,8 +45,8 @@ pub fn iterators() {
         sum += j;
         println!("{:?}", j)
     }
-    println!("{}", sum)
-
+    println!("{}", sum);
+    returns();
 }
 
 //Iterator is a pub Trait(in std) which looks similar to this:
@@ -98,4 +98,18 @@ fn iter_playground()  -> impl Iterator<Item=u32> {
     //Note zip doesn't produce when one of items is None, ie not produces (5, None)
         ;
     fltr
+}
+
+fn returns () {
+    let mut a = [3, 4, 5, 7, 11, 10];
+    let buf: &mut [i32] = &mut a;
+    let lag = 1;
+
+    let _returns: Vec<i32> = a.iter()
+                   .zip(&a[lag..a.len()])
+                   .map(|(&c, &s)| s - c)
+                   .collect();
+
+    println!("{:?}", _returns)
+
 }
