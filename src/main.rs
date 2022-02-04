@@ -14,6 +14,11 @@ mod lifetimes_generics_traitbounds;
 mod variables;
 mod closures1;
 mod iterators;
+mod smart_pointers;
+mod smart_pointers2;
+mod smart_pointers3;
+mod smart_pointers4;
+mod smart_pointers5;
 
 //main that ran succesfully returns 0, else some integer
 //can also return Result
@@ -45,5 +50,12 @@ fn main() {
     //closures1::closures()
 
     //Iterators
-    iterators::iterators();
+    //iterators::iterators();
+
+    //Smart pointers
+    //smart_pointers::_box();
+    //smart_pointers2::_rc();
+    //smart_pointers4::_more_pointers();
+    //smart_pointers5::inf_cycle();
+    smart_pointers5::tree();
 }

@@ -116,11 +116,11 @@ where T: Fn(K) -> V, //struct needs to know Type of closure(aka calc)
 
     fn value(&mut self, arg: K) -> V {
         match self.value.get(&arg) { //get requires Hash + Eq
-            Some(v) => *v, //here moves v (because moving v out of the function?)
+            Some(v) => *v, //here moves/copies v (because moving v out of the function?)
             None => {
                 let res = (self.calc)(arg);
                 self.value.insert(arg, res); //use of moved value (moving arg to self.value)
-                //inser requires Hash and Eq
+                //insert requires Hash and Eq
                 res
             }
         }
