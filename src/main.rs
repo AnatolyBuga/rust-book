@@ -79,6 +79,6 @@ fn main() {
     //oop::oops();
     //let mut ac = AveragedCollection::new(vec![1, 2]);
     //ac.fn_average();
-    oop2::part_one();
+    //oop2::part_one();
     oop2::part_two();
 }
