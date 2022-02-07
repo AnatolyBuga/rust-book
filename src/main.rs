@@ -15,10 +15,19 @@ mod variables;
 mod closures1;
 mod iterators;
 mod smart_pointers;
-mod smart_pointers2;
 mod smart_pointers3;
 mod smart_pointers4;
+mod smart_pointers2;
 mod smart_pointers5;
+mod threads;
+mod threads2;
+mod threads3;
+mod oop;
+mod oop2;
+mod oop3;
+mod oop4;
+
+use oop::{AveragedCollection};
 
 //main that ran succesfully returns 0, else some integer
 //can also return Result
@@ -57,5 +66,19 @@ fn main() {
     //smart_pointers2::_rc();
     //smart_pointers4::_more_pointers();
     //smart_pointers5::inf_cycle();
-    smart_pointers5::tree();
+    //smart_pointers5::inf_cycle2()
+    //smart_pointers5::tree();
+
+    //FEARLESS Concurrency
+    //threads::thread();
+    //threads2::thread()
+    //threads3::mutexes();
+    //threads3::deadlock();
+
+    //OOP
+    //oop::oops();
+    //let mut ac = AveragedCollection::new(vec![1, 2]);
+    //ac.fn_average();
+    oop2::part_one();
+    oop2::part_two();
 }

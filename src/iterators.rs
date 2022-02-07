@@ -39,6 +39,12 @@ pub fn iterators() {
     println!("{:?}", counter.next());
     println!("{:?}", counter.next());
 
+    let f = Counter::new(0)
+                   .zip(Counter::new(2).skip(1));
+    for o in f {
+        println!("{:?}", o)
+    }
+
     let fltr = iter_playground();
     let mut sum: u32 = 0;
     for j in fltr {

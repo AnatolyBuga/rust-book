@@ -82,7 +82,7 @@ pub fn tree() {
     println!("{:?}", a);
 
     *leaf.parent.borrow_mut() = Rc::downgrade(&branch);
-    let b = *leaf.parent.borrow_mut();
+    //let b = *leaf.parent.borrow_mut(); - can'r do, doesn't implement Copy
     //creates Weak ref. Weak holds non-owning ref
     //weak upgrade returns Option<Rc<T>>
     //no guarantees of value being present
@@ -98,4 +98,12 @@ pub fn tree() {
               branch weak   count: {}",
               Rc::strong_count(&branch), Rc::weak_count(&branch));
 
+}
+
+pub fn inf_cycle2() {
+    let c = Rc::new(1);
+    let a = Rc::new(RefCell::new(Rc::clone(&c)));
+    let b = Rc::new(RefCell::new(Rc::clone(&c)));
+
+    //*a.borrow_mut() = Rc::clone(&b);
 }
