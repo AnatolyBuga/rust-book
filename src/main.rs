@@ -9,6 +9,7 @@ mod structs2;
 mod generics1;
 mod traits;
 mod traits2;
+mod traits3;
 mod lifetimes;
 mod lifetimes_generics_traitbounds;
 mod variables;
@@ -26,8 +27,13 @@ mod oop;
 mod oop2;
 mod oop3;
 mod oop4;
-
+mod patterns;
+mod unsafe_mod;
+mod types;
+mod functions;
 use oop::{AveragedCollection};
+use hello_mac;
+
 
 //main that ran succesfully returns 0, else some integer
 //can also return Result
@@ -80,5 +86,17 @@ fn main() {
     //let mut ac = AveragedCollection::new(vec![1, 2]);
     //ac.fn_average();
     //oop2::part_one();
-    oop2::part_two();
+    //oop2::part_two();
+    
+    //PATTERS
+    //patterns::patterns();
+
+    //Unsafe
+    //unsafe_mod::_unsafe();
+
+    //TYPES
+    //types::types();
+
+    //FUNCTIONS
+    //functions::functions();
 }

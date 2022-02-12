@@ -84,6 +84,8 @@ impl Counter {
     }
 }
 
+/// Can't implement a trait on Type multiple times
+/// that's the difference between associated types and generics
 impl Iterator for Counter
 {
     type Item = u32;

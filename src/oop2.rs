@@ -2,7 +2,7 @@
 
 //use gui::drawer::Screen; - too long to write, use below
 use super::oop3::{Draw, Screen, Button};
-use super::oop4::{Post};
+use super::oop4::{Post, Post2};
 
 struct SelectBox{
     w: u32,
@@ -33,9 +33,16 @@ pub fn part_one() {
 pub fn part_two() {
     let mut post = Post::new(); //new blog
     post.add_text("I ate pizza for lunch today");
-    assert_eq!("", post.content()); //not req review yet
+    println!("{}", post.content()); //not req review yet
     post.request_review();
-    assert_eq!("", post.content()); //not reviewed/approved yet
-    //post.approve();
-    //assert_eq!("I ate pizza for lunch today", post.content());
-    }
+    println!("{}", post.content()); //not reviewed/approved yet
+    post.approve();
+    println!("{}", post.content());
+
+    let mut p2 = Post2::new();
+    p2.add_text("Tomorrow is Georgian");
+    let p2 = p2.request_review();
+    let p2 = p2.approve();
+    println!("{}", p2.content());
+
+}
