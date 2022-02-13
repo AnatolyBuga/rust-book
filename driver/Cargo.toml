@@ -1,0 +1,14 @@
+[package]
+name = "collections"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+hello_mac = {path = "../hello_mac"}
+hello_mac_derive = { path = "../hello_mac/hello_mac_derive" }
+
+[[bin]]
+name = "book"
+path = "src/main.rs"
