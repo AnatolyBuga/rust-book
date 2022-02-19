@@ -33,8 +33,7 @@ macro_rules! vc {
 use hello_mac::HelloMacro;
 use hello_mac_derive::HelloMacro;
 
-/// this calls hello_macro_derive
-#[derive(HelloMacro)]
+#[derive(HelloMacro)] // this calls hello_macro_derive
 struct Pancakes;
 
 pub fn macros() {

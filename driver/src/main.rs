@@ -103,4 +103,5 @@ fn main() {
 
     //MACROS
     macros::macros();
+    let a = stringify!("a");
 }
