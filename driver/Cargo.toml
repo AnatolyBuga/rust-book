@@ -8,6 +8,7 @@ edition = "2021"
 [dependencies]
 hello_mac = {path = "../hello_mac"}
 hello_mac_derive = { path = "../hello_mac/hello_mac_derive" }
+rand = "0.8.4"
 
 [[bin]]
 name = "book"

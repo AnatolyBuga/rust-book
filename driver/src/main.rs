@@ -34,6 +34,7 @@ mod functions;
 use oop::{AveragedCollection};
 use hello_mac;
 mod macros;
+mod guessing_game;
 
 
 //main that ran succesfully returns 0, else some integer
