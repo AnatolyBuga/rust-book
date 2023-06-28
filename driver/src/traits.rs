@@ -33,7 +33,10 @@ pub fn traits () {
 
     let w = Wrapper(vec![String::from("hello"), String::from("world")]);
     println!("w = {}", w);
-    println!("len = {}", w.len()) //take advantage of deref coer
+    println!("len = {}", w.len()); //take advantage of deref coer
+
+    let a: Box<dyn Pilot> = Box::new(p);
+    a.fly();
 
 }
 

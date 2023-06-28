@@ -37,7 +37,12 @@ cargo test -- --show-output ; to show println!'s of passing tests
 cargo test explore ; to run specific tests, in that case explore only, another eg
 cargo test c ; in this case runs two tests which have a c in the name
 cargo test -- --ignored ; to run ignored tests
+cargo test -p engine; to run specific package
 Doc tests catches examples in doc strings
+Integration tests: create dir next to src
+cargo test --test <filename> for a particular file
+cargo test -p yearfrac -- tests::test_all --exact --nocapture
+#--nocapture shows prints
 
 cargo publish
 must add license under [package] in cargo.toml

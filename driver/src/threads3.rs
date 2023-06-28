@@ -10,7 +10,7 @@
 //! MutexGuard implements Deref to point to inner data
 //! Also has drop which releases data when MutexGuard out of scope
 //!
-//! Arc (Aromic rc) is similar to Rc, but SAFE in concurrent situations
+//! Arc (Atomic rc) is similar to Rc, but SAFE in concurrent situations
 //! Threadsafety(Arc) comes with a performane penalty
 //!
 //! Sync(can be ref from multiple threads) and Send(can be sent to a thread) Traits

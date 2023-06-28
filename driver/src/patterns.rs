@@ -55,9 +55,13 @@ pub fn patterns() {
     let Point{x: a, y: b} = p;
     println!("a: {}, b: {}", a, b);
     println!("p: {:?}", p);
-    // same as:
+    // Shorter:
     let Point{x, y} = p;
-    let msg = Message::ChangeColor(Color::Rgb(1 , 2, 3));
+    let msg = Message::ChangeColor(Color::Rgb(x , y, 3));
+
+    // Destructuring and assign
+    let pp = Point{x: 1, ..p};
+    dbg!(pp);
 
     match msg {
         // .. to ignore the rest
@@ -87,7 +91,6 @@ pub fn patterns() {
     match x {
         // | or operator, can combine with MATCH GUARD
         Some(1) | Some(2) if y==2 => (),
-        //Notice inner scope y shadows outerscope - use MATCH GUARD to compare to y 
         Some(i) if i ==y => println!("Here"),
         _ =>(),
     }

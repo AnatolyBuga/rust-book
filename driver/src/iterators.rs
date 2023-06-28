@@ -53,6 +53,8 @@ pub fn iterators() {
     }
     println!("{}", sum);
     returns();
+
+    let a = [1, 2, 3, 1, 4, 5, 7];
 }
 
 //Iterator is a pub Trait(in std) which looks similar to this:

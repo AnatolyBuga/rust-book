@@ -35,6 +35,13 @@ use oop::{AveragedCollection};
 use hello_mac;
 mod macros;
 mod guessing_game;
+mod serde1;
+mod polars1;
+mod polars2;
+mod polars_par_test;
+mod rayon1;
+pub mod ndarray_bench;
+pub mod letelse;
 
 
 //main that ran succesfully returns 0, else some integer
@@ -78,7 +85,7 @@ fn main() {
     //smart_pointers5::tree();
 
     //FEARLESS Concurrency
-    //threads::thread();
+    threads::thread();
     //threads2::thread()
     //threads3::mutexes();
     //threads3::deadlock();
@@ -103,6 +110,19 @@ fn main() {
     //functions::functions();
 
     //MACROS
-    macros::macros();
-    let a = stringify!("a");
+    //macros::macros();
+    //let a = stringify!("a");
+
+    //SERDE
+    //serde1::srd();
+
+    //POLARS
+    //polars1::p().unwrap();
+    //polars2::p();
+    //polars_par_test::pp().unwrap();
+    //rayon1::rayon_test();
+
+    //LET ELSE
+    //letelse::execute();
+
 }

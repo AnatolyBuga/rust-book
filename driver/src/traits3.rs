@@ -64,6 +64,9 @@ impl Human {
     pub fn fly(&self) {
         println!("Human flies")
     }
+    pub fn roll(&self) {
+        println!("ROLLLLL")
+    }
 }
 /// has to be pub to use baby_name outside
 pub trait Animal {

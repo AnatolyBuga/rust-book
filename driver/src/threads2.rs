@@ -8,14 +8,19 @@ use std::time::Duration;
 pub fn thread() {
     let (tx, rx) = mpsc::channel();
     let tx1 = tx.clone();
+    let tx3 = tx.clone();
     thread::spawn(move || {
         let vals = vec![
-            String::from("From Spawn"),
+            String::from("From Spawn1"),
             String::from("With Love"),
             String::from("Anatoly"),
         String::from("Bugakov")];
         for val in vals {
-            tx.send(val).unwrap(); //notice spawn owns tx
+            let tx2 = tx1.clone();
+            thread::spawn(move || { //spawning thread from within a thread
+            tx2.send(val).unwrap(); //notice spawn owns tx
+            thread::sleep(Duration::from_secs(1))
+            });
             //send returns Result<T,E>. If recieving end dropped, unwrap will panic
             //But should be handled properly
             //can't use val after it's been sent
@@ -28,7 +33,7 @@ pub fn thread() {
             String::from("You too"),
         String::from("Love you")];
         for val in vals {
-            tx1.send(val).unwrap(); //notice spawn owns tx
+            tx3.send(val).unwrap(); //notice spawn owns tx
             //send returns Result<T,E>. If recieving end dropped, unwrap will panic
             //But should be handled properly
             //can't use val after it's been sent

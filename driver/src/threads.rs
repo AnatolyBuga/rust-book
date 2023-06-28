@@ -6,6 +6,7 @@ use std::time::Duration;
 pub fn thread() {
     let v = vec![1,2,3];
     let handle = thread::spawn( move || {
+        println!("Thread spawned NOW");
         for j in 1..10{
             println!("Number {} from thread spawn", j);
             thread::sleep(Duration::from_millis(1)); //pauses thread, allows other thread to run
@@ -25,4 +26,5 @@ pub fn thread() {
 
     //wait for all to finish
     handle.join().unwrap();
+    println!("finish")
 }

@@ -9,7 +9,21 @@ edition = "2021"
 hello_mac = {path = "../hello_mac"}
 hello_mac_derive = { path = "../hello_mac/hello_mac_derive" }
 rand = "0.8.4"
+rand_distr = "0.4.3"
+serde = {version = "1.0.136", features = ["derive"]}
+serde_json = "1.0.79"
+polars = {version = "0.22", features = ["random", "ndarray", "lazy", "is_in", "serde", "dtype-categorical", "strings", "list"] }
+ndarray = {version = "0.15", features = ["matrixmultiply-threading", "rayon", "serde"] }
+
+rayon = "1.5.2"
 
 [[bin]]
 name = "book"
 path = "src/main.rs"
+
+[lib]
+bench = false
+
+[dev-dependencies]
+criterion = "0.3"
+
